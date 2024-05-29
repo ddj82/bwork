@@ -1,0 +1,15 @@
+package kr.co.first.board;
+
+import org.springframework.stereotype.Repository;
+import lombok.RequiredArgsConstructor;
+
+//@RequiredArgsConstructor
+@Repository
+public class BoardDAO {
+	private final JdbcTemplate jdbctemplate;
+	private final String INSERTSQL = "INSERT INTO BOARD (BOARD_NO, TITLE, WRITER, CONTENT, REG_DATE) VALUES (?, ?, ?, ?, NOW())";
+	private final String SELECTLISTSQL = "SELECT BOARD_NO, TITLE, CONTENT, WRITER, REG_DATE FROM BOARD";
+	private final String SELECTONESQL = "SELECT BOARD_NO, TITLE, CONTENT, WRITER, REG_DATE FROM BOARD WHERE BOARD_NO = ?";
+	private final String UPDATESQL = "UPDATE BOARD SET TITLE = ?, CONTENT = ?, WRITER = ? WHERE BOARD_NO = ?";
+	private final String DELETESQL = "DELETE FROM BOARD WHERE BOARD_NO = ?";
+}
