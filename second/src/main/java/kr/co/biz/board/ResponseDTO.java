@@ -16,5 +16,12 @@ public class ResponseDTO<T> {
 	private String error;
 	private List<T> data;
 	private Map<T, Object> mapdata;
+
+	/*
+	* private String code;
+	* private String Message;
+	* private List<T>
+	* */
+
 }
 
